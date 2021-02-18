@@ -13,14 +13,9 @@
     "zenbot": "./zenbot.sh"
   },
   "scripts": {
-    "lint": "eslint **/*.js",
-    "lint-fix": "eslint **/*.js --fix",
-    "precommit": "lint-staged",
-    "test": "jasmine test/**/**.test.js",
-    "test-one": "jasmine $PATH_TO_TEST",
     "postinstall": "node post_install.js",
     "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "prepare": "yarn run snyk-protect"
   },
   "lint-staged": {
     "*.js": [
@@ -124,12 +119,6 @@
     "run-parallel-limit": "^1.0.4",
     "shelljs": "^0.8.0",
     "yargs": "^16.1.1"
-  },
-  "optionalDependencies": {
-    "fsevents": "^2.1.2"
-  },
-  "engines": {
-    "node": ">=10.0.0"
   },
   "snyk": true
 }

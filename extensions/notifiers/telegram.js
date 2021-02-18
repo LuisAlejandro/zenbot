@@ -3,7 +3,7 @@ process.env['NTBA_FIX_319'] = 1
 var TelegramBot = require('node-telegram-bot-api')
 
 module.exports = function telegram (config) {
-  var bot = new TelegramBot(config.bot_token, { polling: true })
+  var bot = new TelegramBot(config.bot_token, { polling: false })
   var wrapper = function(cb) {
     return function(message) {
       if (message.chat.id != config.chat_id) {

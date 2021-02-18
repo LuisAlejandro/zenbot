@@ -3,7 +3,7 @@ const ccxt = require ('ccxt')
 const c = require('../../../conf')
 const n = require('numbro')
 
-const hitbtc = new ccxt.hitbtc2 ({
+const hitbtc = new ccxt.hitbtc ({
   'apiKey': c.hitbtc.key,
   'secret': c.hitbtc.secret,
 })

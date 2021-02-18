@@ -11,7 +11,6 @@ therock.fetch_markets('BTCUSD')
   .then(result =>   {
     var products = []
     result.forEach(function (product) {
-      console.log(product)
       products.push({
         asset: product.base,
         currency: product.quote,

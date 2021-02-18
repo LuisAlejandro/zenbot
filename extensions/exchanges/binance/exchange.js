@@ -8,7 +8,7 @@ module.exports = function binance (conf) {
   var public_client, authed_client
 
   function publicClient () {
-    if (!public_client) public_client = new ccxt.binance({ 'apiKey': '', 'secret': '', 'options': { 'adjustForTimeDifference': true } })
+    if (!public_client) public_client = new ccxt.binance({ 'apiKey': '', 'secret': '', 'options': { 'adjustForTimeDifference': true }, 'timeout': 50000 })
     return public_client
   }
 
@@ -55,6 +55,14 @@ module.exports = function binance (conf) {
 
     getProducts: function () {
       return require('./products.json')
+    },
+    
+    getPriceVariance: function (opts, cb) {
+      var client = publicClient()
+      client.fetchOHLCV(opts.symbol, opts.timeframe, opts.since, opts.limit).then(function(result) {
+        let variance = (result[result.length - 1][4] / result[0][4]) - 1
+        cb(null, variance)
+      })
     },
 
     getTrades: function (opts, cb) {

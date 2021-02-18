@@ -57,8 +57,10 @@ module.exports = {
 
     // sell logic
     if (s.trust_distrust_last_action !== 'sell') {
-      if ( s.period.high > (s.trust_distrust_start + (s.trust_distrust_start / 100 * s.options.sell_min))) { // we are above minimum we want to sell for, or going so low we should "panic sell"
-        if (s.period.high < (s.trust_distrust_highest - (s.trust_distrust_highest / 100 * s.options.sell_threshold))) { // we lost sell_threshold from highest point
+      // we are above minimum we want to sell for, or going so low we should "panic sell"
+      if (s.period.high > (s.trust_distrust_start + (s.trust_distrust_start / 100 * s.options.sell_min))) {
+        // we lost sell_threshold from highest point
+        if (s.period.high < (s.trust_distrust_highest - (s.trust_distrust_highest / 100 * s.options.sell_threshold))) {
           s.signal = 'sell'
 
           s.trust_distrust_last_action = 'sell'
@@ -70,7 +72,8 @@ module.exports = {
         }
       }
 
-      if (s.options.sell_threshold_max > 0 && s.period.high < (s.trust_distrust_highest - (s.trust_distrust_highest / 100 * s.options.sell_threshold_max))) { // we panic sell
+      // we panic sell
+      if (s.options.sell_threshold_max > 0 && s.period.high < (s.trust_distrust_highest - (s.trust_distrust_highest / 100 * s.options.sell_threshold_max))) {
         s.signal = 'sell'
 
         s.trust_distrust_last_action = 'sell'
@@ -82,7 +85,8 @@ module.exports = {
       }
     }
 
-    if (s.options.greed > 0 && s.period.high > (s.trust_distrust_start_greed + (s.trust_distrust_start_greed / 100 * s.options.greed))) { // we are not greedy, sell if this profit is reached
+    // we are not greedy, sell if this profit is reached
+    if (s.options.greed > 0 && s.period.high > (s.trust_distrust_start_greed + (s.trust_distrust_start_greed / 100 * s.options.greed))) {
       s.signal = 'sell'
 
       s.trust_distrust_last_action = 'sell'
@@ -96,7 +100,8 @@ module.exports = {
 
     // buy logic
     if (s.trust_distrust_last_action !== 'buy') {
-      if(s.period.high < s.trust_distrust_start && s.period.high > (s.trust_distrust_lowest + (s.trust_distrust_lowest / 100 * s.options.buy_threshold))) { // we grew above buy threshold from lowest point
+      // we grew above buy threshold from lowest point
+      if(s.period.high < s.trust_distrust_start && s.period.high > (s.trust_distrust_lowest + (s.trust_distrust_lowest / 100 * s.options.buy_threshold))) {
         if (s.options.buy_threshold_max > 0 && s.trust_distrust_buy_threshold_max < s.options.buy_threshold_max) {
           s.trust_distrust_buy_threshold_max++
           return cb()
