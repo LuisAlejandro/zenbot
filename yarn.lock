@@ -2571,10 +2571,10 @@ cbq@0.0.1:
   resolved "https://registry.yarnpkg.com/cbq/-/cbq-0.0.1.tgz#8cbfea9f16243423622c46d50eeda8a33dde7604"
   integrity sha512-MCLjfpHAcI3gPdx26xoQx2JqRdNMf68ovhJkqNSiZIx/yQP6yNYYKbf8ww2J6kgNTPGIrXyugFlNz5jmGtg8BQ==
 
-ccxt@^1.40.77:
-  version "1.41.35"
-  resolved "https://registry.yarnpkg.com/ccxt/-/ccxt-1.41.35.tgz#e1e341a6aedcdda878e9b5119008b5c46307d9d8"
-  integrity sha512-q0sowewpKIN8G4V6ilqp8SK7dDFXHG3/5RBPFgAaqSTLTgV9iEXzmOL1WzEEKP3xF6wqCI8PiU64wSdhE8v6Yg==
+ccxt@^1.41.61:
+  version "1.41.100"
+  resolved "https://registry.yarnpkg.com/ccxt/-/ccxt-1.41.100.tgz#2b6b10af3a4a6f569d7df949c00de738364a4028"
+  integrity sha512-jE3/yjR/6SucdEn28CXCDOZbzK0Ho1t2Nhy0DY95CZocMXpSbp8TCVH1A9O9a1U8t9I1ZnBdHY1+ouhLIGxRPA==
 
 cexio-api-node@^1.0.8:
   version "1.2.0"
