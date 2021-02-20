@@ -57,11 +57,10 @@ module.exports = function binance (conf) {
       return require('./products.json')
     },
     
-    getPriceVariance: function (opts, cb) {
+    getOHLCV: function (opts, cb) {
       var client = publicClient()
       client.fetchOHLCV(opts.symbol, opts.timeframe, opts.since, opts.limit).then(function(result) {
-        let variance = (result[result.length - 1][4] / result[0][4]) - 1
-        cb(null, variance)
+        cb(null, result)
       })
     },
 
