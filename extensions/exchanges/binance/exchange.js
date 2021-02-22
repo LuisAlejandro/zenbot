@@ -57,11 +57,12 @@ module.exports = function binance (conf) {
       return require('./products.json')
     },
     
-    getOHLCV: function (opts, cb) {
-      var client = publicClient()
-      client.fetchOHLCV(opts.symbol, opts.timeframe, opts.since, opts.limit).then(function(result) {
-        cb(null, result)
-      })
+    getPublicClient: function () {
+      return publicClient()
+    },
+    
+    getAuthedClient: function () {
+      return authedClient()
     },
 
     getTrades: function (opts, cb) {
