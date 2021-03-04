@@ -44,5 +44,4 @@ database/*
 
 node_modules
 scripts/genetic_backtester/node_modules
-extensions/strategies/zenprofits_dema
 extensions/strategies/zenprofits_ema_dema
