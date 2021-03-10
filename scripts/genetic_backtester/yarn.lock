@@ -83,9 +83,10 @@ function-bind@^1.1.1:
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
   integrity sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
 
-"geneticalgorithm@git+https://github.com/panchishin/geneticalgorithm.git":
+geneticalgorithm@^1.0.2:
   version "1.0.2"
-  resolved "git+https://github.com/panchishin/geneticalgorithm.git#bedef6245b6576ed4e3c070fee3cb6f45e6120d5"
+  resolved "https://registry.yarnpkg.com/geneticalgorithm/-/geneticalgorithm-1.0.2.tgz#d84a18d3843f9be822aa133c9d848051e9a7fa33"
+  integrity sha512-p+CMQos1L4MCiW2zVqy3gxbpQiWxW1SCerDYoLelPaSU8TQs7QAaNEllEiHD708QgokU7IVprRcYhRRhYwJQFw==
 
 get-caller-file@^2.0.5:
   version "2.0.5"
